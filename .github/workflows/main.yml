@@ -1,15 +1,15 @@
-name: run rython
+name: Run Python
 on:
-    push: 
+    push:
+    schedule:
+    - cron: 0 0 * * *
 
-jobs: 
+jobs:
     build:
         name: run py1
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
-        - name: run python
-          run:
-              python3 test.py 
-
-  
+        - name: Run Python
+          run: |
+            python3 test.py # test
